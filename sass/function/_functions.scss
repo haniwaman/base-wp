@@ -1,0 +1,18 @@
+// ---
+// メディアクエリー
+// ---
+
+// 割り算
+@function division($size, $size2) {
+	@return $size / $size2;
+}
+
+// vw計算
+@function vw($window_width, $size) {
+	@return $size / $window_width * 100vw;
+}
+
+// letter-spacing計算
+@function lsp($letter_spacing, $font_size) {
+	@return $letter_spacing / $font_size * 1em;
+}

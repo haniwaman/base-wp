@@ -1,0 +1,53 @@
+// ---
+// ページネーション（アーカイブ）
+// ---
+.p-pagination {
+	text-align: center;
+	margin-top: 32px;
+
+	a {
+		transition: color, background 0.3s ease 0s;
+
+		&:hover {
+			color: #fff;
+			background: #666;
+		}
+
+		&.next,
+		&.prev {
+			&:hover {
+				opacity: $opacity;
+				color: #666;
+				background: #fff;
+			}
+		}
+	}
+}
+
+.page-numbers {
+	border: 1px solid #666;
+	background: #fff;
+	text-align: center;
+	min-width: 30px;
+	height: 30px;
+	line-height: 28px;
+	color: #666;
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 8px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.current {
+		color: #fff;
+		background: #666;
+	}
+
+	&.dots,
+	&.next,
+	&.prev {
+		border: none;
+	}
+}

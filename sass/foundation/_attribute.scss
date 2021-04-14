@@ -1,0 +1,14 @@
+// ---
+// 属性の定義
+// ---
+[data-target] {
+	cursor: pointer;
+}
+
+[aria-busy="true"] {
+	cursor: progress;
+}
+
+[aria-controls] {
+	cursor: pointer;
+}

@@ -1,0 +1,99 @@
+// ---
+// 色
+// ---
+$cr-m: #666; // ベース色
+$cr-bg: #fffffe; // 背景
+$cr-txt: #333; // テキスト色
+$cr-table: #eee; // テーブル
+
+// ---
+// マウスホバー
+// ---
+$opacity: 0.7; // 透過度
+
+// ---
+// フォント
+// ---
+$ff-awesome: "Font Awesome 5 Free", sans-serif; // Font Awesome用
+$ff-code: monospace, sans-serif; // コード用
+$fz-base: 16px; // ベースフォントサイズ
+$ff-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+	Meiryo, sans-serif; // ベースフォントサイズ
+$fw-base: 400; // ベースフォントウェイト
+$lh-base: 1.6; // ベース行間
+
+// ---
+// レイアウト
+// ---
+$layout-width-canvas: 1440px; // キャンパスサイズ
+$layout-width-inner: 1180px; // インナー幅サイズ
+$layout-width-vw: 1180; // vw基準サイズ
+$layout-width-sp: 768px; // スマホサイズ
+
+// ---
+// ブレークポイント（PC基準）
+// ---
+$breakpoints: (
+	"sp": "screen and (max-width: #{$layout-width-sp - 1px})",
+	// スマホ以下の場合
+	"tab-only":
+		"(min-width: #{$layout-width-sp}) and (max-width: #{$layout-width-inner - 1px})",
+	// タブレットの場合
+	"tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+	// タブレット以下の場合
+	"pc": "screen and (min-width: #{$layout-width-inner})",
+	// タブレット以上の場合
+	"ie":
+		"screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)"
+		// IEの場合,
+);
+
+// ---
+// ヘッダー高さ
+// ---
+$header-height: 80px; // PC時のヘッダーの高さ
+$header-height-sp: 60px; // スマホ時のヘッダーの高さ
+
+// ---
+// 重なり順の定義
+// ---
+$layer: (
+	modal: 100,
+	// モーダル
+	drawer: 40,
+	// ドロワー
+	floating: 30,
+	// フローティング
+	header: 20,
+	// ヘッダー
+	footer: 10,
+	// フッター
+	default: 1 // 標準,
+);
+
+// ---
+// 左右の余白
+// ---
+$pd-tab: 24px; // タブレット時の余白
+$pd-sp: 16px; // スマホ時の余白
+
+// ---
+// フォーカスの表示有無（outline）
+// ---
+$no-focus: true;
+
+// ---
+// フォーム
+// ---
+$cr-form-bd: #ccc; // ボーダー色（デフォルト時）
+$cr-form-bd_active: #ccc; // ボーダー色（アクティブ時）
+
+$cr-check: #ccc; // チェックアイコン色（デフォルト時）
+$cr-check_active: $cr-m; // チェックアイコン色（アクティブ時）
+
+$size-checkbox: 26px; // チェックボックスのサイズ
+$size-checkbox-pd_left: 30px; // チェックボックスと文字の余白
+
+$size-radio: 26px; // ラジオボタンのサイズ（デフォルト部分）
+$size-radio_active: 10px; // ラジオボタンのサイズ（アクティブ部分）
+$size-radio-pd_left: 30px; // ラジオボタンと文字の余白
