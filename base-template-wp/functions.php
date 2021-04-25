@@ -54,16 +54,16 @@ add_action( 'wp_enqueue_scripts', 'my_script' );
  *
  * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/register_nav_menus
  */
-function my_menu_init() {
-	register_nav_menus(
-		array(
-			'global'  => 'ヘッダーメニュー',
-			'utility' => 'ユーティリティメニュー',
-			'drawer'  => 'ドロワーメニュー',
-		)
-	);
-}
-add_action( 'init', 'my_menu_init' );
+// function my_menu_init() {
+// 	register_nav_menus(
+// 		array(
+// 			'global'  => 'ヘッダーメニュー',
+// 			'utility' => 'ユーティリティメニュー',
+// 			'drawer'  => 'ドロワーメニュー',
+// 		)
+// 	);
+// }
+// add_action( 'init', 'my_menu_init' );
 
 
 /**
@@ -71,70 +71,19 @@ add_action( 'init', 'my_menu_init' );
  *
  * @codex http://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/register_sidebar
  */
-function my_widget_init() {
-	register_sidebar(
-		array(
-			'name'          => 'サイドバー',
-			'id'            => 'sidebar',
-			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<div class="p-widget__title">',
-			'after_title'   => '</div>',
-		)
-	);
-}
-add_action( 'widgets_init', 'my_widget_init' );
-
-
-/**
- * テンプレートタグ
- */
-require_once get_template_directory() . '/functions/tags.php';
-
-
-/**
- * パンくず
- */
-require_once get_template_directory() . '/functions/breadcrumb.php';
-
-
-/**
- * パンくずリストの「ホーム」テキストの書き換え
- *
- * @param string $home 書き換え前のホーム.
- * @return string $home 書き換え後のホーム.
- */
-function my_breadcrumb_home_change( $home ) {
-	return 'Home';
-}
-add_filter( 'my_breadcrumb_home', 'my_breadcrumb_home_change' );
-
-
-/**
- * パンくずリストの区切り文字の書き換え
- *
- * @param string $bridge 書き換え前の区切り文字.
- * @return string $bridge 書き換え後の区切り文字.
- */
-function my_breadcrumb_bridge_change( $bridge ) {
-	return $bridge;
-}
-add_filter( 'my_breadcrumb_bridge', 'my_breadcrumb_bridge_change' );
-
-
-/**
- * パンくずリストのタイトルの書き換え
- *
- * @param string $title 書き換え前のタイトル.
- * @return string $title 書き換え後のタイトル.
- */
-function my_breadcrumb_title_change( $title ) {
-	if ( is_home() ) {
-		$title = 'ブログ';
-	}
-	return $title;
-}
-add_filter( 'my_breadcrumb_title', 'my_breadcrumb_title_change' );
+// function my_widget_init() {
+// 	register_sidebar(
+// 		array(
+// 			'name'          => 'サイドバー',
+// 			'id'            => 'sidebar',
+// 			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<div class="p-widget__title">',
+// 			'after_title'   => '</div>',
+// 		)
+// 	);
+// }
+// add_action( 'widgets_init', 'my_widget_init' );
 
 
 /**
@@ -176,39 +125,6 @@ function my_archive_title( $title ) {
 add_filter( 'get_the_archive_title', 'my_archive_title' );
 
 
-
-
-/**
- * ウィジェットの投稿件数をaタグ内に
- *
- * @param string $output もともと出力するHTMLタグ.
- * @return string $output 変換後に出力するHTMLタグ.
- */
-function my_list_anchor( $output ) {
-	$output = preg_replace( '/<\/a>.*?\((\d+)\)/', ' <span>($1)</span></a>', $output );
-	return $output;
-}
-add_filter( 'wp_list_categories', 'my_list_anchor' );
-add_filter( 'get_archives_link', 'my_list_anchor' );
-
-
-/**
- * タイトル文字列の変換
- *
- * @param string $title 変更前のタイトル.
- * @return string $title 変更後のタイトル.
- */
-function my_breadcrumb_title( $title ) {
-	$max_num = 300;
-	if ( mb_strlen( $title ) > $max_num ) {
-		$title = mb_substr( $title, 0, $max_num ) . '...';
-	}
-
-	return $title;
-}
-add_filter( 'my_breadcrumb_title', 'my_breadcrumb_title', 10, 2 );
-
-
 /**
  * 抜粋文の文字数の変更
  *
@@ -232,8 +148,3 @@ function my_excerpt_more( $more ) {
 
 }
 add_filter( 'excerpt_more', 'my_excerpt_more' );
-
-/**
- * コメント機能の無効化
- */
-add_filter( 'comments_open', '__return_false' );

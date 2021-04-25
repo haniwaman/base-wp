@@ -10,7 +10,7 @@ const autoprefixer = require("autoprefixer");
 const cssdeclsort = require("css-declaration-sorter");
 
 /* default value */
-const themeName = "base-wp"; // WordPress theme name
+const themeName = "base-template-wp"; // WordPress theme name
 const srcSass   = "./sass/**/*.scss"; // sass src path
 const distCss   = `./${themeName}/assets/css`; // css output path
 

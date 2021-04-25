@@ -1,6 +1,0 @@
-<?php
-/**
- * Main Visual Single
- */
-
-?>

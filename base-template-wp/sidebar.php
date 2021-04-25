@@ -1,6 +1,4 @@
 <?php
 /**
- * Drawer
+ * Sidebar
  */
-
-?>

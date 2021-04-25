@@ -5,5 +5,5 @@
 
 ?>
 
-<footer role="contentinfo">
+<footer class="">
 </footer>

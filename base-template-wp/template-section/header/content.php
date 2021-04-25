@@ -5,5 +5,5 @@
 
 ?>
 
-<header role="banner">
+<header class="">
 </header>

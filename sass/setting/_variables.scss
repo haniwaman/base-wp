@@ -45,7 +45,7 @@ $breakpoints: (
 	// タブレット以上の場合
 	"ie":
 		"screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)"
-		// IEの場合,
+		// IEの場合,,,
 );
 
 // ---
@@ -68,7 +68,7 @@ $layer: (
 	// ヘッダー
 	footer: 10,
 	// フッター
-	default: 1 // 標準,
+	default: 1 // 標準,,,
 );
 
 // ---
@@ -76,11 +76,6 @@ $layer: (
 // ---
 $pd-tab: 24px; // タブレット時の余白
 $pd-sp: 16px; // スマホ時の余白
-
-// ---
-// フォーカスの表示有無（outline）
-// ---
-$no-focus: true;
 
 // ---
 // フォーム
